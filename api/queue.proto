@@ -17,7 +17,6 @@ syntax = "proto3";
 
 package api;
 
-import "google/api/resource.proto";
 import "google/protobuf/duration.proto";
 import "google/protobuf/timestamp.proto";
 
@@ -27,10 +26,6 @@ option java_package = "com.onego.asynctasks";
 // how those tasks are dispatched. Configurable properties include rate limits,
 // retry options, queue types, and others.
 message Queue {
-  option (google.api.resource) = {
-    type: "cloudtasks.googleapis.com/Queue"
-    pattern: "projects/{project}/locations/{location}/queues/{queue}"
-  };
 
   // State of the queue.
   enum State {
